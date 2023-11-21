@@ -32,8 +32,43 @@ const resolvers = {
             const token = signToken(user);
       
             return { token, user };
-          },
-    }
-}
-
-module.exports = resolvers
+          }, catch (err) {
+            console.log(err);
+            throw new Error("Internal server error");
+          }
+        },
+        saveBook: async (_, { input }, { user }) => {
+          try {
+            const updatedUser = await User.findOneAndUpdate(
+              { _id: user._id },
+              { $addToSet: { savedBooks: input } },
+              { new: true, runValidators: true }
+            );
+    
+            return updatedUser;
+          } catch (err) {
+            console.log(err);
+            throw new Error("Internal server error");
+          }
+        },
+        deleteBook: async (_, { bookId }, { user }) => {
+          try {
+            const updatedUser = await User.findOneAndUpdate(
+              { _id: user._id },
+              { $pull: { savedBooks: { bookId } } },
+              { new: true }
+            );
+    
+            if (!updatedUser) {
+              throw new Error("Couldn't find user with this id!");
+            }
+    
+            return updatedUser;
+          } catch (err) {
+            console.log(err);
+            throw new Error("Internal server error");
+          }
+        },
+      };
+    
+    module.exports = resolvers;
