@@ -28,6 +28,10 @@ We need to refactor it to be a GraphQL API built with Apollo Server.
 Allows users to Sign-Up, Log In to the API. 
 Search a book, Save a book, and Delete a book of their choosing.
 
+## Deployed
+https://git.heroku.com/blooming-waters-15565.git
+![barnesN_Google](<assets/Deployed_barnesNGoogle 2.png>)
+![barnesN_Google](<assets/barnesNGoogle_signup 2.png>)
 
 
 ## License
@@ -38,8 +42,8 @@ This project is under the license of MIT.
 
 GitHub account:
 
->[https://github.com/HunterMuratore](https://github.com/HunterMuratore)
+>[https://github.com/BrianJohnMaher](https://github.com/BrianJohnMaher)
 
 Reach me through email here to ask any questions about the app!
 
->Email: [muratoreh@gmail.com](mailto:muratoreh@gmail.com)
+>Email: [BMaher22@mac.com](mailto:BMaher22@mac.com)
